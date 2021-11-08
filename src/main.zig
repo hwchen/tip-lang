@@ -1,5 +1,6 @@
 const std = @import("std");
 const clap = @import("clap");
+const parse = @import("./parse.zig");
 
 const io = std.io;
 const fs = std.fs;
@@ -52,6 +53,13 @@ fn run(alloc: *Allocator, path: []const u8) !void {
     std.debug.print("{s}", .{source});
 
     // Parse
+    var parser = parse.Parser{
+        .alloc = alloc,
+        .source = source,
+    };
+
+    try parser.parse();
+
     // Analysis
     // Execution
 }
