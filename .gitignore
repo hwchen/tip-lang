@@ -1,0 +1,5 @@
+zig-cache
+zig-out
+.gyro
+build_runner.zig
+temp.tip
